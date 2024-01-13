@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include("includes/connection.php");
+include("../includes/connection.php");
 
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
           $_SESSION["Email"] =$Email;
           $_SESSION["First_Name"] =$First_Name;
 
-          header("Location: home.php");
+          header("Location: index.php");
         die;
     } else {
         echo "Please enter valid information!";

@@ -21,10 +21,10 @@ include("../includes/connection.php");
                 <img class="logo" src="images/logo.jpg" alt="logo">
                
                 <ul  class="nav-list" width:100%>
-                    <li><a href="home.php">Home</a></li>
-                    <li><a href="../Our-Tours/ourtours.php">Our Tours</a></li>
-                    <li><a href="../About-Page/about.php">About Buea</a></li>
-                    <li><a href="../Our-Tours/travel.php">Travel Guide</a></li>
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="../our_tours/ourtours.php">Our Tours</a></li>
+                    <li><a href="../about_page/about.php">About Buea</a></li>
+                    <li><a href="../our_tours/travel.php">Travel Guide</a></li>
                     
                     <li><a href="contact.php">Contact Us</a>
                         <!--<ul class="dropdown">
@@ -164,7 +164,7 @@ include("../includes/connection.php");
     </div>
 
     <div class="box1">
-        <a href="ourtours.php"><button>Visit Our Locations</button></a>
+        <a href="../our_tours/ourtours.php"><button>Visit Our Locations</button></a>
         <div class="map">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63669.310712113955!2d9.22532733757535!3d4.154985037432801!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x10613259651819a3%3A0x754210aa92e62bff!2zQnXDqWE!5e0!3m2!1sfr!2scm!4v1703876058199!5m2!1sfr!2scm" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>

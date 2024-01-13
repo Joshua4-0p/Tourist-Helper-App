@@ -6,21 +6,21 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="../Classic-Page/mystyle.css">
+    <link rel="stylesheet" href="../classic_page/mystyle.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
-    <link rel="shortcut icon" type="x-icon" href="../Home-Page/images/fyw.png">
+    <link rel="shortcut icon" type="x-icon" href="../home_page/images/fyw.png">
     <title> VIP Booking Page </title>
 </head>
 
 <body onload="renderdate()">
     <header>
-        <img class="logo" src="../Home-Page/images/fyw.png">
+        <img class="logo" src="../home_page/images/fyw.png">
         <nav>
             <ul class="nav-list" width:100%>
-                <li><a href="../Home-Page/home.html">Home</a></li>
+                <li><a href="../home_page/home.html">Home</a></li>
                 <li><a href="OurTours.html">Our Tours</a></li>
-                <li><a href="../About-Page/About.html">About Buea</a></li>
+                <li><a href="../about_page/About.html">About Buea</a></li>
                 <li><a href="../Tourist-Guide-Page/index.html">Travel Guide</a></li>
                 <li><a href="#">Contact Us</a></li>
             </ul>
@@ -150,8 +150,8 @@
     </form>
     <script type="text/javascript">
         package_data = `<?php
-                        require '../Classic-Page/php/connection.php';
-                        require '../VIP-Page/code.php';
+                        require '../classic_page/php/connection.php';
+                        require '../vip_page/code.php';
                         echo get_package_details($pdo, 'Classic');
                         ?>`;
         console.log(package_data);

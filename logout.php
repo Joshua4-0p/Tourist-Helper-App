@@ -10,6 +10,6 @@ if (ini_get("session.use_cookies")) {
 }
 unset($_SESSION['Email']);
 session_destroy(); // destroy session
-header("location:home.php"); 
+header("location:index.php"); 
 ?>
 

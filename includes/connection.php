@@ -1,12 +1,12 @@
 <?php
 
 $dbhost = "localhost";
-// $dblocuser = "root"; // Local DB
-// $dbpass = ""; // Local DB
-// $dbname = "touristapp"; // Local DB
-$dbuser = "yhrxyxngvq"; // Online DB
-$dbpass = "kb7BfzrY6M"; // Online DB
-$dbname = "yhrxyxngvq"; // Online DB
+$dbuser = "root"; // Local DB
+$dbpass = ""; // Local DB
+$dbname = "touristapp"; // Local DB
+// $dbuser = "yhrxyxngvq"; // Online DB
+// $dbpass = "kb7BfzrY6M"; // Online DB
+// $dbname = "yhrxyxngvq"; // Online DB
 
 // Create a connection
 $con = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
