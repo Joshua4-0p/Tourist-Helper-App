@@ -1,0 +1,169 @@
+var calendarDay = document.querySelectorAll(".date .day");
+var siteDayInfo = document.querySelector(".form-example");
+var siteDayInfoCntr = document.querySelector(".form-example-cnt");
+var siteOrderInfo = document.querySelector(".site-order");
+var headerDate = document.querySelector(".calendar-date");
+var headerDay = document.querySelector(".calendar-day");
+var headerMonth = document.querySelector(".calendar-month");
+var headerYear = document.querySelector(".calendar-year");
+var orderSummaryInfo = document.querySelector(".order-summary");
+
+var orderSummaryDate = document.querySelector(".site-date .date")
+var orderSummaryDay = document.querySelector(".site-date .day")
+var orderSummaryMonth = document.querySelector(".site-date .month");
+var orderSummaryYear = document.querySelector(".site-date .year")
+var orderSummaryTouristSite = document.querySelectorAll(".order-site-name");
+
+var selectedDay;
+var selectedWeekDay;
+var selectedMonth;
+var selectedYear;
+
+var OrderSummary = {
+    package_ids: [],
+    package_counts: [],
+    booking_dates: []
+};
+
+var currIndex;
+var currIndex1;
+
+var weekDaysArr = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+var index = 0;
+// Code for displaying data from the database
+//Have to add select time
+while (index < Object.keys(obj).length) {
+    var clone = siteDayInfo.cloneNode(true);
+    var siteName = clone.querySelector(".form-example label");
+    var checkBtn = clone.querySelector(".form-check-input");
+    checkBtn.setAttribute("id", "name" + (index + 1));
+    siteName.setAttribute("for", "name" + (index + 1));
+    siteName.innerText = Object.keys(obj)[index];
+    clone.classList.remove("hidden");
+    siteDayInfoCntr.insertBefore(clone, null);      //adding different touristic sites here
+    // siteDesc[index].innerText = obj[selectedWeekDay][index].Description
+    index++
+    // siteStartTime[index].innerText = obj[selectedWeekDay][index].Start_Time.slice(0, 5)
+    // siteEndTime[index].innerText = obj[selectedWeekDay][index].End_Time.slice(0, 5)
+}
+
+
+for (var i = 0; i < 31; i++) {
+    calendarDay[i].addEventListener("click", function (e) {
+        target = e.target;
+        currIndex = Array.prototype.indexOf.call(calendarDay, target)
+        calendarDay[currIndex].classList.add("today_styles");
+        selectedDay = target.innerText;
+        selectedMonth = montharr[currMonth];
+        selectedYear = currYear;
+        selectedWeekDay = weekDaysArr[new Date(
+            currYear, currMonth, selectedDay
+        ).getDay()]
+
+    });
+}
+// var selectedDay = selectedWeekDay;
+
+
+//Order summary scripting begins here
+var checkBtn = document.querySelectorAll(".form-check-input");
+var touristSiteName;
+console.log(checkBtn);
+
+for (i = 0; i < checkBtn.length; i++) {
+    checkBtn[i].addEventListener("change", function (e) {       //event listener for the check button
+
+        target = e.target;
+        currIndex1 = Array.prototype.indexOf.call(checkBtn,target);
+
+        if (checkBtn[currIndex1].checked ) {
+            orderSummaryInfo.classList.remove("hidden");
+            orderSummaryDay.innerText = selectedDay;
+            orderSummaryDate.innerText = selectedWeekDay;
+            orderSummaryMonth.innerText = selectedMonth;
+            orderSummaryYear.innerText = selectedYear;
+            // checkBtn[currIndex1].parentNode.parentNode.querySelector(".package_id_index").innerText = OrderSummary.package_ids.length;
+
+            //data for the JSON
+            // OrderSummary.package_ids.push(obj[checkBtn[currIndex1].parentNode.parentNode.querySelector(".calendar-day").innerText][0].Package_ID);
+            // OrderSummary.package_counts.push(1);
+            // console.log(orderSummaryYear.innerText, Array.prototype.indexOf.call(montharr, orderSummaryMonth.innerText), parseInt(orderSummaryDate.innerText))
+            // OrderSummary.booking_dates.push(new Date(orderSummaryYear.innerText, Array.prototype.indexOf.call(montharr, orderSummaryMonth.innerText), parseInt(orderSummaryDate.innerText)));
+
+
+            touristSiteName = checkBtn[currIndex1].parentNode.querySelector("label");
+            for (i = touristSiteName.length - 1; i >= 0; i--) {
+                orderSummaryTouristSite[i].innerText = touristSiteName[i].innerText;
+            }
+
+            var clone1 = siteOrderInfo.cloneNode(true);
+            clone1.classList.remove("hidden");
+            var totalSection = document.querySelector(".total");
+            console.log(totalSection)
+            totalSection.classList.remove("hidden");
+
+            clone1.setAttribute('id', `order${OrderSummary.package_ids.length - 1}`);
+
+
+            clone1.querySelector(".plus").addEventListener("click", function () {
+
+                var num = clone1.querySelector(".num");
+                var a = parseInt(num.innerText);
+                a++;
+                OrderSummary.package_counts[parseInt(checkBtn[currIndex1].parentNode.parentNode.querySelector(".package_id_index").innerText)] = a;
+                a = (a < 10) ? "0" + a : a;
+                num.innerText = a;
+                var price = clone1.querySelector(".price").innerText;
+                var total = document.querySelector(".total-pricing");
+                var initTotal = parseInt(total.innerText);
+                total.innerText = initTotal + parseInt(price.slice(4));
+            })
+
+            clone1.querySelector(".minus").addEventListener("click", function () {
+                var num = clone1.querySelector(".num");
+                var a = parseInt(num.innerText);
+                if (a > 1) {
+                    a--;
+                    OrderSummary.package_counts[parseInt(checkBtn[currIndex1].parentNode.parentNode.querySelector(".package_id_index").innerText)] = a;
+                    a = (a < 10) ? "0" + a : a;
+                    num.innerText = a;
+                    var price = clone1.querySelector(".price").innerText;
+                    var total = document.querySelector(".total-pricing");
+                    var initTotal = parseInt(total.innerText);
+                    total.innerText = initTotal - parseInt(price.slice(4));
+                }
+
+            })
+
+
+
+            orderSummaryInfo.insertBefore(clone1, null);
+            var price = clone1.querySelector(".price").innerText;
+            var total = document.querySelector(".total-pricing");
+            var initTotal = parseInt(total.innerText);
+            total.innerText = initTotal + parseInt(price.slice(4));
+
+        }
+        else {
+            var package_id_index = checkBtn[currIndex1].parentNode.parentNode.querySelector(".package_id_index").innerText;
+            var clone1 = orderSummaryInfo.querySelector("#order" + package_id_index);
+            var num = clone1.querySelector(".num").innerText;
+            var price = clone1.querySelector(".price").innerText;
+            OrderSummary.package_counts[package_id_index] = 0;
+            clone1.remove();
+            var total = document.querySelector(".total-pricing");
+            var initTotal = parseInt(total.innerText);
+            total.innerText = initTotal - parseInt(num) * parseInt(price.slice(4));
+
+        }
+
+    })
+}
+   
+
+
+
+
+
+

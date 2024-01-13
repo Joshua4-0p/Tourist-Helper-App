@@ -1,5 +1,5 @@
 
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;500&family=Quicksand:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;700&display=swap');
 *{
     box-sizing: border-box;
     margin: 0px;
@@ -19,12 +19,12 @@ header{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 20px 5%;
+   
 }
 .nav{
     display: flex;
 }
-.nav a: :active{color:#40b09c;}
+.nav a:active{color:#40b09c;}
 
 .logo{
     width: 70px;
@@ -32,34 +32,53 @@ header{
     cursor: pointer;
 }
 
+nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+}
 .nav-list{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
     list-style: none;
 }
 
-.nav-list li{
-    display: inline-block;
-    padding: 8px 24px;
-}
-
-.nav-list li a{
-    transition: all 0.3s ease 0s;
-}
 
 .nav-list li a:hover{
-    color: #40b09c
+    color: #40b09c;
+}
+
+
+.nav-list li a::after{
+    content: '';
+    height: 3px;
+    width: 0;
+    background-color: #40b09c;
+    margin: auto;
+    display: block;
+}
+li a:hover::after{
+    width: 100%;
+    transition: width 0.3s linear;
 }
 
 .background{
-    height: 500px;
+    height: 100vh;
+    width: 100%;
     display: flex;
     justify-content: center;
     flex-direction: column;
-    background-image: url(/images/Main\ Image.jfif);
+    background-image: linear-gradient(rgba(4,9,30,0.2),rgba(4,9,30,0.3)), url(./images/Main-Image.jfif);
+    object-fit: cover;
     align-items: center;
     position: relative;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: absolute;
+    background-position: center;
     padding: 0px;
 
 }
@@ -74,15 +93,15 @@ header{
     opacity: 0.35;
 }*/
 
-.h1{
+h1{
     font-family: poppins, sans-serif;
     font-weight: 500;
-    font-size: 45px;
+    font-size: 52px;
     color: #ffff; 
 }
-.h5{
+.background p{
     font-family: poppins, sans-serif;
-    font-weight: 100;
+    font-weight: 200;
     font-size: 25px;
     color: #ffff; 
 }
@@ -119,12 +138,12 @@ header{
 }
 .picset1{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     width: 100%;
 }
-.pic{
+/* .pic{
     width: 30%;
-}
+} */
 .image{
     height: 200px;
     width: 190px;
@@ -133,10 +152,12 @@ header{
 }
 .imgtitle{
     padding: 20px;
+    text-align: center;
     color: rgb(180, 48, 48);
     font-weight: 700;
 }
 .pic p{
+    max-width: 190px;
     font-family: poppins, sans-serif;
     font-weight: 300;
     padding-top: 25px;
@@ -164,9 +185,21 @@ header{
 .box1{
     display: flex;
     flex-direction: column;
-    gap: 50px;
-    width: 40%;
+    justify-content: space-between;
+    gap: 100px;
+    width: 30%;
 }
+.box11{
+    display: flex;
+    gap: 20px;
+}
+.bi{
+    color: #000;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+}
+
 .text-heading{
     font-size: larger;
     font-weight: 700;
@@ -193,15 +226,21 @@ header{
     width: 100px;
     align-self: center;
     height: 40px;
+    background-color: rgba(141, 16, 16);
     border-radius: 25px;
+    margin-top: -60px;
+}
+
+.pics button:hover{
     background-color: rgb(141, 16, 16);
-    color: #ffff;
-    margin-top: -40px;
+    color: rgba(255, 255, 255, 1);
+    box-shadow: 0 5px 15px rgba(145, 92, 182, .4);
 }
 .pics p{
-    margin-top: 15px;
+    align-self: center;
+    margin-top: 35px;
     font-weight: 700;
-    width: 50%;
+    width: 55%;
 }
 
 .box1{
