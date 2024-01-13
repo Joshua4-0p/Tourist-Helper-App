@@ -23,7 +23,7 @@
         <img  class="logo" src="../Home-Page/images/fyw.png">
             <nav> 
                 <ul class="nav-list" width:100%>
-                    <li><a href="../Home-Page/home.php">Home</a></li>
+                    <li><a href="../home_page/home.php">Home</a></li>
                     <li><a href="OurTours.html">Our Tours</a></li>
                     <li><a href="../About-Page/About.html">About Buea</a></li>
                     <li><a href="../Tourist-Guide-Page/index.html">Travel Guide</a></li>
