@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 
                 $_SESSION["Email"] =$Email;
           $_SESSION["First_Name"] =$First_Name;
-                header("Location: ../home.php");
+                header("Location: ../index.php");
                 die;
             } else {
                 $error_message = "Incorrect email or password!";

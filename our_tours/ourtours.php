@@ -16,10 +16,10 @@ include("../includes/connection.php");
         <nav> 
             <img class="logo" src="images/logo b.png" alt="logo">
             <ul class="nav-list" width:100%>
-                <li><a href="../Home-Page/home.php">Home</a></li>
-                <li><a href="../Our-Tours/ourtours.php">Our Tours</a></li>
-                <li><a href="../About-Page/about.php">About Buea</a></li>
-                <li><a href="../Our-Tours/ourtours.php">Travel Guide</a></li>
+                <li><a href="../home_page/index.php">Home</a></li>
+                <li><a href="../our_tours/ourtours.php">Our Tours</a></li>
+                <li><a href="../about_page/about.php">About Buea</a></li>
+                <li><a href="../our_tours/ourtours.php">Travel Guide</a></li>
                 <li><a href="contact.php">Contact Us</a>
                     <ul class="dropdown">
                         <li><a href="#">Booking</a>
@@ -39,7 +39,7 @@ include("../includes/connection.php");
                         echo "<li><a href='Travel.php'>$First_Name</a></li>";
                     }
                     else {
-                        echo '<li><a href="createaccount.php">SignUp</a></li>';
+                        echo '<li><a href="../create_account_page/createaccount.php">SignUp</a></li>';
                     }
                     ?>
             </ul>
@@ -94,8 +94,8 @@ include("../includes/connection.php");
             </div>
         </div>
         <div class="buttons">
-            <a href="../Classic-Page/index.php"><button>Book Classic</button></a>
-            <a href="../Classic-Page/index.php"><button>Book VIP</button></a>
+            <a href="../classic_page/index.php"><button>Book Classic</button></a>
+            <a href="../classic_page/index.php"><button>Book VIP</button></a>
         </div>
     </div>
     <div class="hotels">

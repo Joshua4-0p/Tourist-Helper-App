@@ -16,11 +16,11 @@ include("../includes/connection.php");
         <nav> 
             <img class="logo" src="images/logo b.png" alt="logo">
             <ul class="nav-list" width:100%>
-                <li><a href="../Home-Page/home.php">Home</a></li>
-                <li><a href="../Our-Tours/ourtours.php">Our Tours</a></li>
+                <li><a href="../home_page/index.php">Home</a></li>
+                <li><a href="../our_tours/ourtours.php">Our Tours</a></li>
                 <li><a href="About.php">About Buea</a></li>
-                <li><a href="../Our-Tours/travel.php">Travel Guide</a></li>
-                <li><a href="../Contact-Us-Page/contact.php">Contact Us</a>
+                <li><a href="../our_tours/travel.php">Travel Guide</a></li>
+                <li><a href="../contact_us_page/contact.php">Contact Us</a>
                     <ul class="dropdown">
                         <li><a href="#">Booking</a>
                             <ul class="dropdown2">

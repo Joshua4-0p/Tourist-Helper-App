@@ -1,6 +1,6 @@
 <?php
 
-require '../Classic-Page/php/connection.php';
+require '../classic_page/php/connection.php';
 
 function appendOrInit(&$array, $key, $value) //if key is set, it will append value into array, if not, it creates then initialises
 {
