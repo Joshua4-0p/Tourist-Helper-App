@@ -5,6 +5,10 @@
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
-    ]
+    ],
+    "github": {
+      "repo": "Joshua4-0p/Tourist-Helper-App",
+      "branch": "main"
+    }
   }
 }
